@@ -1,6 +1,9 @@
 /* عامل الخدمة — يتيح تشغيل تطبيق "الرائز القبلي" دون اتصال بالإنترنت بعد أول فتح */
-const CACHE = 'rayez-qabli-v1';
-const ASSETS = ['./', './index.html'];
+const CACHE = 'rayez-qabli-v2';
+const ASSETS = [
+  './', './index.html', './manifest.webmanifest',
+  './icon-192.png', './icon-512.png', './icon-maskable-512.png', './apple-touch-icon.png'
+];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)).catch(() => {}));
